@@ -3,7 +3,7 @@ import HeaderBar from './header-bar';
 import StarRating from 'react-star-rating';
 import Select from 'react-select';
 import SignaturePad from 'react-signature-pad';
-import SortableItemMixin from 'react-sortable-items/SortableItemMixin';
+var SortableItemMixin = require('react-anything-sortable').SortableItemMixin;
 import SliderNativeBootstrap from 'react-bootstrap-native-slider';
 
 let FormElements = {};

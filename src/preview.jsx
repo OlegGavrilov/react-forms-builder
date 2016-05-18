@@ -3,7 +3,7 @@
   */
 
 import React from 'react';
-import Sortable from 'react-sortable-items';
+import Sortable from 'react-anything-sortable';
 import ElementStore from './stores/ElementStore';
 import ElementActions from './actions/ElementActions';
 import {Header,Paragraph,Label,LineBreak,TextInput,TextArea,Dropdown,Checkboxes,DatePicker,RadioButtons,Rating,Tags,Signature,HyperLink,Download,Camera,Range} from './form-elements';
@@ -110,6 +110,7 @@ export default class Preview extends React.Component {
           return <Range mutable={false} parent={this.props.parent} editModeOn={this.props.editModeOn} isDraggable={true} key={item.id} sortData={item.id} data={item} _onDestroy={this._onDestroy} />
       }
     })
+    var formConfig = JSON.stringify(this.state.data, null, 2);
     return (
       <div className={classes}>
         <div className="edit-form">
@@ -120,6 +121,9 @@ export default class Preview extends React.Component {
         <Sortable sensitivity={0} key={this.state.data.length} onSort={this.handleSort.bind(this)}>
           {items}
         </Sortable>
+        <div className="json-output">
+          <pre class="prettyprint">{formConfig}</pre>
+        </div>
       </div>
     )
   }

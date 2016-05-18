@@ -92,79 +92,41 @@
         }
       }
     }
-    .Sortable {
-      transition: opacity .25s ease-in;
+    .ui-sortable {
+      display: block;
       position: relative;
-      cursor: move;
-      -webkit-touch-callout: none;
+      overflow: visible;
       -webkit-user-select: none;
-      -khtml-user-select: none;
       -moz-user-select: none;
-      -ms-user-select: none;
       user-select: none;
-      .rfb-item {
-        padding: 10px 20px;
-        &.SortableItem {
-          position: relative;
-          .form-group {
-            pointer-events: none;
-            label, select, input, a {
-              cursor: move;
-            }
-            input[type='date'] {
-              height: 42px;
-            }
-            .react-star-rating {
-              display: block;
-            }
-            .checkbox-label, .radio-label {
-              font-weight: normal;
-              display: block;
-            }
-            .label-required {
-              margin-left: 5px;
-            }
-          }
-          &.is-dragging {
-            position: absolute;
-            z-index: 1688;
-            border: 2px #ccc dashed;
-            background: #fff;
-            cursor: move;
-            padding: 10px 20px;
-          }
-        }
-        &.is-placeholder {
-          display: block;
-          z-index: auto;
-          opacity: .4;
-          border: 2px #ccc dashed;
-        }
-        .toolbar-header {
-          opacity: 0;
-          z-index: 100;
-          position: relative;
-          .label {
-            position: absolute;
-            left: 20px;
-          }
-          .toolbar-header-buttons {
-            position: absolute;
-            right: 20px;
-          }
-        }
-        &:hover {
-          box-shadow: inset 0 0 5px #ddd;
-          background: #fff;
-          select, input {
-            cursor: move;
-            pointer-events: none;
-          }
-          .toolbar-header {
-            opacity: 1;
-          }
-        }
-      }
+    }
+
+    .ui-sortable:before,
+    .ui-sortable:after{
+      content: " ";
+      display: table;
+    }
+
+    .ui-sortable:after{
+      clear: both;
+    }
+
+    .ui-sortable .ui-sortable-item {
+      cursor: move;
+    }
+
+    .ui-sortable .ui-sortable-item.ui-sortable-dragging {
+      position: absolute;
+      z-index: 1688;
+    }
+
+    .ui-sortable .ui-sortable-placeholder {
+      display: none;
+    }
+
+    .ui-sortable .ui-sortable-placeholder.visible {
+      display: block;
+      z-index: -1;
     }
     &.is-editing {
       // .Sortable {
@@ -185,7 +147,6 @@
   .react-form-builder-toolbar {
     width: 250px;
     background: #fff;
-    margin-top: -30px;
 
     h4 {
       margin-top: 0;

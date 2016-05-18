@@ -131,14 +131,14 @@ export default class Toolbar extends React.Component {
         icon: 'fa fa-text-height',
         field_name: 'text_area_'
       },
-      {
-        key: 'Rating',
-        canHaveAnswer: true,
-        name: 'Rating',
-        label: 'Placeholder Label',
-        icon: 'fa fa-star',
-        field_name: 'rating_'
-      },
+      //{
+        //key: 'Rating',
+        //canHaveAnswer: true,
+        //name: 'Rating',
+        //label: 'Placeholder Label',
+        //icon: 'fa fa-star',
+        //field_name: 'rating_'
+      //},
       {
         key: 'DatePicker',
         name: 'Date',
@@ -146,13 +146,13 @@ export default class Toolbar extends React.Component {
         label: 'Placeholder Label',
         field_name: 'date_picker_'
       },
-      {
-        key: 'Signature',
-        name: 'Signature',
-        icon: 'fa fa-pencil-square-o',
-        label: 'Signature',
-        field_name: 'signature_'
-      },
+      //{
+        //key: 'Signature',
+        //name: 'Signature',
+        //icon: 'fa fa-pencil-square-o',
+        //label: 'Signature',
+        //field_name: 'signature_'
+      //},
       {
         key: 'HyperLink',
         name: 'Web site',

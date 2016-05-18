@@ -24,9 +24,20 @@ module.exports = {
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        loaders: ["babel-loader"]
+        loader: ["babel"],
+        query: {
+          presets: ['es2015', 'react'],
+          plugins: ['transform-class-properties']
+        }
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       }
     ],
+  },
+  sassLoader: {
+    includePaths: [__dirname + "/css"]
   },
   resolve: {
     extensions: ['', '.js', '.json', '.jsx', '.css', '.scss']

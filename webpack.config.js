@@ -6,17 +6,27 @@ module.exports = {
     path: __dirname + "/build",
   },
 
+  watch: true,
+
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ["react-hot", "babel-loader"]
+        loader: ["babel"],
+        query: {
+          presets: ['es2015', 'react'],
+          plugins: ['transform-class-properties']
+        }
       },
       {
         test: /\.scss$/,
         loader: "style-loader!css-loader!sass-loader"
-      }
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
     ],
   },
   resolve: {
